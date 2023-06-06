@@ -12,7 +12,8 @@
     </div>
     <div class="btn-container"> <center> 
     <button class="button" onclick="goBack()">Back</button>
-    <button class="button" onclick="reloadPage()">Reload</button> </center>
+    <button class="button" onclick="reloadPage()">Reload</button> 
+    <button class="button" onclick="toggleFullscreen()">Fullscreen</button> </center>
     </div>
     <ul class="menu">
       <li><a href="#">Home</a></li>
@@ -22,6 +23,18 @@
       <li><a href="#">Settings</a></li>
     </ul>
   </nav>
+  <iframe id="iframe" src=""></iframe>
   <script src="script.js"></script>
 </body>
 </html>
+
+
+<script>
+  // Retrieve the storedURL from local storage
+const storedURL = localStorage.getItem('storedURL');
+
+// Set the src attribute of the iframe to the storedURL
+const iframe = document.getElementById('iframe');
+iframe.src = storedURL;
+
+</script>

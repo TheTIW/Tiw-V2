@@ -1,38 +1,501 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-      <link rel="stylesheet" href="index.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-   </head>
-   <body>
-      <div id="header">
-         <img src="logo.gif" alt="Logo">
+<head>
+  <link rel="stylesheet" type="text/css" href="/games/games.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="/logo.png" alt="Logo">
+      <h3>TIW</h3>
+    </div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Games</a></li>
+      <li><a href="#">Proxy</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </nav>
+  <center>
+  <div class="container" style="">
+    <center><input type="text" id="search-input" placeholder="Search for a game" class="search-input"></center>
+
+    <div id="game-list">
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/1/')">
+        <img src="/games/logos/1.png"  class="game-logo">
+        <h3 class="game-name">1</h3>
       </div>
-      <div id="content">
-         <h1 onclick="launchURL('netflix.com')">Search the Web and use the FIRST static proxy</h1>
-         <form id="uv-form"">
-            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
-            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
-          </form>
-          <div class="desc left-margin">
-            <p id="uv-error"></p>
-            <pre id="uv-error-code"></pre>
-          </div>
-         <a href="https://discord.gg/zJhPJYJCeJ" target="_blank" class="fa-brands fa-discord"></a>
-         <a href="https://github.com/TheTIW/UV-Static" target="_blank"class="fa-brands fa-github"></a>
-         <a href="https://starttiw.org" target="_blank"class="fa-solid fa-cloud"></a>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/10-minutes-till-dawn/')">
+        <img src="/games/logos/10minutestilldawn.png"  class="game-logo">
+        <h3 class="game-name">10 Minutes till dawn</h3>
       </div>
-      <script src="uv/uv.bundle.js" defer></script>
-      <script src="uv/uv.config.js" defer></script>
-      <script src="register-sw.js" defer></script>
-      <script src="search.js" defer></script>
-      <script src="index.js" defer></script>
-      <div id="footer">
-         <p>&copy; 2023 TIW. All rights reserved.</p>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/100ng/')">
+        <img src="/games/logos/100playerpong.jpg"  class="game-logo">
+        <h3 class="game-name">100 Player Pong</h3>
       </div>
-   </body>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/1v1lol/')">
+        <img src="/games/logos/1v1.lol.png"  class="game-logo">
+        <h3 class="game-name">1v1.lol</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/1v1space/')">
+        <img src="/games/logos/1v1space.png"  class="game-logo">
+        <h3 class="game-name">1v1.space</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/2048/')">
+        <img src="/games/logos/2048Icon.png"  class="game-logo">
+        <h3 class="game-name">2048</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/2048-multitask/')">
+        <img src="/games/logos/2048mutli.png"  class="game-logo">
+        <h3 class="game-name">2048 Multitask</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/9007199254740992/')">
+        <img src="/games/logos/9007199254740992.png"  class="game-logo">
+        <h3 class="game-name">9007199254740992</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/99balls/')">
+        <img src="/games/logos/99balls.jpg"  class="game-logo">
+        <h3 class="game-name">99balls</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/a-dance-of-fire-and-ice/')">
+        <img src="/games/logos/adanceoffireandice.png"  class="game-logo">
+        <h3 class="game-name">A Dance of Fire and Ice</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/adarkroom/')">
+        <img src="/games/logos/adarkroom.png"  class="game-logo">
+        <h3 class="game-name">A Dark Room</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/achievementunlocked/')">
+        <img src="/games/logos/achivementunlocked.png"  class="game-logo">
+        <h3 class="game-name">Achievement Unlocked</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/adrenalinechallenge/')">
+        <img src="/games/logos/adrenalinechallenge.jpg"  class="game-logo">
+        <h3 class="game-name">Adrenaline Challenge</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/adventure-drivers/')">
+        <img src="/games/logos/adventuredrivers.png"  class="game-logo">
+        <h3 class="game-name">Adventure Drivers</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ages-of-conflict/')">
+        <img src="/games/logos/ageofconflict.jpg"  class="game-logo">
+        <h3 class="game-name">Age of Conflict</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/alienhominid/')">
+        <img src="/games/logos/alienhominid.jpg"  class="game-logo">
+        <h3 class="game-name">Alien Hominind</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/amazing-rope-police/')">
+        <img src="/games/logos/alienhominid.jpg"  class="game-logo">
+        <h3 class="game-name">Amazing Rope Police</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/amidst-the-clouds/')">
+        <img src="/games/logos/admisttheclouds.png"  class="game-logo">
+        <h3 class="game-name">Admist The Clouds</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/among-us/')">
+        <img src="/games/logos/amongus.png"  class="game-logo">
+        <h3 class="game-name">Among Us</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/angry-sharks/')">
+        <img src="/games/logos/angrysharks.png"  class="game-logo">
+        <h3 class="game-name">Angry Sharks</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/aquapark-slides/')">
+        <img src="/games/logos/aquaparkslides.png"  class="game-logo">
+        <h3 class="game-name">Aquapark Slides</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/astray/')">
+        <img src="/games/logos/astray.png"  class="game-logo">
+        <h3 class="game-name">Astray</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/avalanche/')">
+        <img src="/games/logos/avalanche.png"  class="game-logo">
+        <h3 class="game-name">Avalanche</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/awesometanks2/')">
+        <img src="/games/logos/awesometanks2.jpg"  class="game-logo">
+        <h3 class="game-name">Awesome Tanks 2</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/backrooms/')">
+        <img src="/games/logos/backrooms.jpg"  class="game-logo">
+        <h3 class="game-name">Backrooms</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bacon-may-die/')">
+        <img src="/games/logos/baconmaydie.png"  class="game-logo">
+        <h3 class="game-name">Bacon May Die</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bad-ice-cream/')">
+        <img src="/games/logos/badicecream.png"  class="game-logo">
+        <h3 class="game-name">Bad Ice Cream</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bad-ice-cream-2/')">
+        <img src="/games/logos/badicecream2.png"  class="game-logo">
+        <h3 class="game-name">Bad Ice Cream 2</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bad-ice-cream-3/')">
+        <img src="/games/logos/badicecream3.png"  class="game-logo">
+        <h3 class="game-name">Bad Ice Cream 3</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bad-ice-cream-3/')">
+        <img src="/games/logos/baldi's basics.png"  class="game-logo">
+        <h3 class="game-name">Baldis Basics</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ballistic-chickens/')">
+        <img src="/games/logos/ballistic chickens.png"  class="game-logo">
+        <h3 class="game-name">Ballistic Chickens</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/basket-random/')">
+        <img src="/games/logos/basketrandom.jpeg"  class="game-logo">
+        <h3 class="game-name">Basket Random</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/basketball-stars/')">
+        <img src="/games/logos/basketball-stars.png"  class="game-logo">
+        <h3 class="game-name">Basketball Stars</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/basketbros-io/')">
+        <img src="/games/logos/basketbros.jpg"  class="game-logo">
+        <h3 class="game-name">Basketbros.io</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/battleforgondor/')">
+        <img src="/games/logos/battleforgrondor.jfif"  class="game-logo">
+        <h3 class="game-name">Battles for Gondor</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bntts/')">
+        <img src="/games/logos/bigneontowershiny.png"  class="game-logo">
+        <h3 class="game-name">Big NEON Tower Tiny Square</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bigredbutton/')">
+        <img src="/games/logos/bigredbutton.png"  class="game-logo">
+        <h3 class="game-name">Big Red Button</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/btts/')">
+        <img src="/games/logos/bigtowertinysquare.png"  class="game-logo">
+        <h3 class="game-name">Big Tower Tiny Square</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bitlife/')">
+        <img src="/games/logos/bitlife.png"  class="game-logo">
+        <h3 class="game-name">Bitlife</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/blacholesquare/')">
+        <img src="/games/logos/blackholesquare.png"  class="game-logo">
+        <h3 class="game-name">Black Hole Square</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/blackknight/')">
+        <img src="/games/logos/blackknight.png"  class="game-logo">
+        <h3 class="game-name">Black Knight</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bloonstd/')">
+        <img src="/games/logos/bloonstd.jpg"  class="game-logo">
+        <h3 class="game-name">Bloons TD</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bloonstd2/')">
+        <img src="/games/logos/bloonstd2.png"  class="game-logo">
+        <h3 class="game-name">Bloons TD 2</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/btd5/')">
+        <img src="/games/logos/bloonstd5.png"  class="game-logo">
+        <h3 class="game-name">Bloons TD 5</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bloxors/')">
+        <img src="/games/logos/bloxors.png"  class="game-logo">
+        <h3 class="game-name">Bloxors</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/bobtherobber2')">
+        <img src="/games/logos/bob the robber 2.jpeg"  class="game-logo">
+        <h3 class="game-name">Bob the Robber 2</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/boxhead2play/')">
+        <img src="/games/logos/boxhead.jpg"  class="game-logo">
+        <h3 class="game-name">Box Head</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/boxing-random/')">
+        <img src="/games/logos/boxingrandom.jpg"  class="game-logo">
+        <h3 class="game-name">Boxing Random</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/breakingthebank/')">
+        <img src="/games/logos/breakingthebank.png"  class="game-logo">
+        <h3 class="game-name">Breaking the Bank</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/burger-and-frights/')">
+        <img src="/games/logos/burgerandfrights.png"  class="game-logo">
+        <h3 class="game-name">Burger and Frights</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/csgo-clicker/')">
+        <img src="/games/logos/CSGo Clicker.png"  class="game-logo">
+        <h3 class="game-name">CS:GO Clicker</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/cannon-basketball-4/')">
+        <img src="/games/logos/Cannon Basketball 4.png"  class="game-logo">
+        <h3 class="game-name">Cannon Basketball 4</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/anyondefense/')">
+        <img src="/games/logos/Canyon Defense.png"  class="game-logo">
+        <h3 class="game-name">Canyon Defense</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/cars-simulator/')">
+        <img src="/games/logos/Cars Simulator.png"  class="game-logo">
+        <h3 class="game-name">Cars Simulator</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/cell-machine/')">
+        <img src="/games/logos/Cell Machine.png"  class="game-logo">
+        <h3 class="game-name">Cell Machine</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/championarcher/')">
+        <img src="/games/logos/Champion Archer.png"  class="game-logo">
+        <h3 class="game-name">Champion Archer</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/champion-island/')">
+        <img src="/games/logos/championislnad.png"  class="game-logo">
+        <h3 class="game-name">Champion Island</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/chill-radio/')">
+        <img src="/games/logos/chillradio.png"  class="game-logo">
+        <h3 class="game-name">Chill Radio</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/chrome-dino/')">
+        <img src="/games/logos/chromedino.png"  class="game-logo">
+        <h3 class="game-name">Chrome Dino</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/cluster-rush/')">
+        <img src="/games/logos/clusterrush.png"  class="game-logo">
+        <h3 class="game-name">Cluster Rush</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/connect3/')">
+        <img src="/games/logos/connect3.png"  class="game-logo">
+        <h3 class="game-name">Connect 3</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/cookie-clicker/')">
+        <img src="/games/logos/cookieclicker.png"  class="game-logo">
+        <h3 class="game-name">Cookie Clicker</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/core-ball/')">
+        <img src="/games/logos/coreball.png"  class="game-logo">
+        <h3 class="game-name">Core Ball</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/craftmine/')">
+        <img src="/games/logos/craftmine.png"  class="game-logo">
+        <h3 class="game-name">Craftmine</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/creativekillchamber/')">
+        <img src="/games/logos/creativekillchamber.jpg"  class="game-logo">
+        <h3 class="game-name">Creative Kill Chamber</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/crossyroad/')">
+        <img src="/games/logos/crossyroad.png"  class="game-logo">
+        <h3 class="game-name">Crossy Road</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/cubefield/')">
+        <img src="/games/logos/cubefield.png"  class="game-logo">
+        <h3 class="game-name">Cubefield</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/cupcake2048/')">
+        <img src="/games/logos/Cupcake 2048.png"  class="game-logo">
+        <h3 class="game-name">Cupcake 2048</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ctr/')">
+        <img src="/games/logos/Cut the rope.png"  class="game-logo">
+        <h3 class="game-name">Cut the Rope</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ctr-holiday/')">
+        <img src="/games/logos/Cut the rope holiday.webp"  class="game-logo">
+        <h3 class="game-name">Cut the Rope Holiday</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ctr-tr/')">
+        <img src="/games/logos/Cut the rope Time Travel.png"  class="game-logo">
+        <h3 class="game-name">Cut the Rope Time Travel </h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/dante/')">
+        <img src="/games/logos/Dante.png"  class="game-logo">
+        <h3 class="game-name">Dante</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/deal-or-no-deal/')">
+        <img src="/games/logos/dealornodeal.jpg"  class="game-logo">
+        <h3 class="game-name">Deal or No Deal</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/death-run-3d/')">
+        <img src="/games/logos/deathrun3d.png"  class="game-logo">
+        <h3 class="game-name">Death Run 3D</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/deepest-sword/')">
+        <img src="/games/logos/deepestsword.jpg"  class="game-logo">
+        <h3 class="game-name">Deepest Swords</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/defend-the-tank/')">
+        <img src="/games/logos/defendthetank.jpg"  class="game-logo">
+        <h3 class="game-name">Defend the Tank</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/doctor-acorn2/')">
+        <img src="/games/logos/doctoracorn2.jpg"  class="game-logo">
+        <h3 class="game-name">Doctor Acorn 2</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/doge2048/')">
+        <img src="/games/logos/doge2048.png"  class="game-logo">
+        <h3 class="game-name">Doge 2048</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/DogeMiner/')">
+        <img src="/games/logos/dogeminer.png"  class="game-logo">
+        <h3 class="game-name">Doge Miner</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/Dogeminer2/')">
+        <img src="/games/logos/dogeminer2.jpg"  class="game-logo">
+        <h3 class="game-name">Doge Miner 2</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/doodle-jump/')">
+        <img src="/games/logos/doodlejump.png"  class="game-logo">
+        <h3 class="game-name">Doodle Jump</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/doublewires/')">
+        <img src="/games/logos/doublewires.png" class="game-logo">
+        <h3 class="game-name">Double Wires</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/dragon-vs-bricks/')">
+        <img src="/games/logos/dragonsvsbricks.jpg"  class="game-logo">
+        <h3 class="game-name">Dragons vs Bricks</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/draw-the-hill/')">
+        <img src="/games/logos/drawthehill.png"  class="game-logo">
+        <h3 class="game-name">Draw the Hill</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/drift-hunters/')">
+        <img src="/games/logos/drifthunters.png"  class="game-logo">
+        <h3 class="game-name">Drift Hunters</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/drive-mad/')">
+        <img src="/games/logos/drivemad.jpg"  class="game-logo">
+        <h3 class="game-name">Drive Mad</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ducklife1/')">
+        <img src="/games/logos/ducklife.png"  class="game-logo">
+        <h3 class="game-name">Ducklife</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ducklife2/')">
+        <img src="/games/logos/ducklife2.png"  class="game-logo">
+        <h3 class="game-name">Ducklife 2</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ducklife3/')">
+        <img src="/games/logos/ducklife3.png"  class="game-logo">
+        <h3 class="game-name">Ducklife 3</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/ducklife4/')">
+        <img src="/games/logos/ducklife4.jpg"  class="game-logo">
+        <h3 class="game-name">Ducklife 4</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/duke-nukem-2/')">
+        <img src="/games/logos/dukenukem2.jpg"  class="game-logo">
+        <h3 class="game-name">Duke Nukem 2</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/minecraft-15/')">
+        <img src="/games/logos/eaglercraft15.jpeg"  class="game-logo">
+        <h3 class="game-name">Eaglercraft 1.5</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/minecraft-18/')">
+        <img src="/games/logos/eaglercraft18.png"  class="game-logo">
+        <h3 class="game-name">Eaglercraft 1.8</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/edge-surf/')">
+        <img src="/games/logos/edgeletssurf.png"  class="game-logo">
+        <h3 class="game-name">Edge Let's Surf</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/edgenotfound/')">
+        <img src="/games/logos/edgenotfound.png"  class="game-logo">
+        <h3 class="game-name">Edge Not Found</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/eel-slap/')">
+        <img src="/games/logos/eelslap.png"  class="game-logo">
+        <h3 class="game-name">Eel Slap</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/elasticman/')">
+        <img src="/games/logos/elasticman.jpg"  class="game-logo">
+        <h3 class="game-name">Elastic Man</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/endlesswar3/')">
+        <img src="/games/logos/endlesswar3.png"  class="game-logo">
+        <h3 class="game-name">Endless War 3</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/escapingtheprison/')">
+        <img src="/games/logos/escapingtheprison.jpg"  class="game-logo">
+        <h3 class="game-name">Escaping the Prison</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/evil-glitch/')">
+        <img src="/games/logos/eviglitch.png"  class="game-logo">
+        <h3 class="game-name">Evil Glitch</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/evolution/')">
+        <img src="/games/logos/evolution.png"  class="game-logo">
+        <h3 class="game-name">Evolution</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/exo/')">
+        <img src="/games/logos/exo.jpg"  class="game-logo">
+        <h3 class="game-name">Exo</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/factoryballs/')">
+        <img src="/games/logos/factoryballs.png"  class="game-logo">
+        <h3 class="game-name">Factory Balls Forever</h3>
+      </div>
+      <div class="game" onmouseover="highlightGame(this)" onclick="launchGame('raw.githack.com/NCCoder1/3kh0-assets/main/fairsquares/')">
+        <img src="/games/logos/fairsquares.png"  class="game-logo">
+        <h3 class="game-name">Fair Squares</h3>
+      </div>
+    </div>
+</center>
+    <form id="uv-form"">
+        <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+      </form>
+
+
+  <script src="uv/uv.bundle.js" defer></script>
+  <script src="uv/uv.config.js" defer></script>
+  <script src="register-sw.js" defer></script>
+  <script src="search.js" defer></script>
+  <script src="index.js" defer></script>
+</body>
 </html>
+
+<script>
+    // Get the search input element
+var searchInput = document.getElementById('search-input');
+
+// Add an event listener for the input event
+searchInput.addEventListener('input', function() {
+  var searchValue = searchInput.value.toLowerCase();
+  var games = document.getElementsByClassName('game');
+
+  // Loop through the game elements and show/hide based on search value
+  for (var i = 0; i < games.length; i++) {
+    var game = games[i];
+    var gameName = game.getElementsByTagName('h3')[0].innerText.toLowerCase();
+
+    if (gameName.includes(searchValue)) {
+      game.style.display = 'block';
+    } else {
+      game.style.display = 'none';
+    }
+  }
+});
+</script>
+
+<script>
+    function highlightGame(game) {
+      // Get all game elements
+      const games = document.getElementsByClassName('game');
+  
+      // Remove 'highlighted' class from all games
+      for (let i = 0; i < games.length; i++) {
+        games[i].classList.remove('highlighted');
+      }
+  
+      // Add 'highlighted' class to the hovered game
+      game.classList.add('highlighted');
+  
+      // Add 'fade' class to other games
+      for (let i = 0; i < games.length; i++) {
+        if (games[i] !== game) {
+          games[i].classList.add('fade');
+        }
+      }
+    }
+  </script>
+  

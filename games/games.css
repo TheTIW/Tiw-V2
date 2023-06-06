@@ -14,7 +14,6 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
   }
   
   .logo {
@@ -23,18 +22,15 @@ body {
   }
   
   .logo img {
-    height: 50px;
+    height: 75px;
     margin-right: 10px;
   }
   
-  .logo img:hover{
-    transform: scale(1.5);
-  }
   .logo h3 {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
     padding:5px;
     text-transform: uppercase;
     color: blueviolet;
@@ -91,7 +87,7 @@ body {
   
   .menu {
     list-style: none;
-    margin-top: 0.2%;
+    margin-top: -2%;
     padding: 0;
     display: flex;
   }
@@ -192,37 +188,79 @@ body {
     color: #ff0000;
   }
   
-  .btn-container{
-    margin-right: -5%;
-    top:0;
+  .container {
+    margin: 0 auto;
+    max-width: 90%;
+    padding: 20px;
   }
 
-  .button {
-    padding: 10px 20px;
+  .search-input {
+    width: 50%;
+    padding: 10px;
     font-size: 16px;
-    border: none;
-    top:0;
-    margin-right: 5px;
-    background-color: #6C63FF;
-    color: white;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(108, 99, 255, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    font-weight: bold;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .search-input::placeholder{
     text-transform: uppercase;
-    letter-spacing: 2px;
-    outline: none;
+    text-align: center;
   }
 
-  .button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 8px 16px rgba(108, 99, 255, 0.5);
+  .search-input:focus{
+    outline:none;
+    border: 1.5px solid #5c5c5cfa;
+  }
+  #game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the game elements horizontally */
+    margin-top: 20px;
   }
 
-  #iframe {
-    width: 100%;
-    height: calc(100vmax); /* Subtracting the height of the navbar */
-    margin-top: 0.1vmax; /* Height of the navbar */
-    border: none;
+  .game {
+    width: calc(10% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .game:hover {
+    background-color: #333;
+  }
+
+  .game.highlighted {
+    opacity: 1;
+  }
+
+  .game.fade {
+    opacity: 0.7;
+  }
+
+  .game-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .game-name {
+    font-size: 16px;
+    margin: 0;
+    color: white;
+  }
+
+  @media (max-width: 767px) {
+    .game {
+      width: calc(50% - 20px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .game {
+      width: calc(100% - 20px);
+    }
   }
