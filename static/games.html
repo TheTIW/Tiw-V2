@@ -11,11 +11,11 @@
       <h3>TIW</h3>
     </div>
     <ul class="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/inprogress.html">About</a></li>
       <li><a href="#">Games</a></li>
-      <li><a href="#">Proxy</a></li>
-      <li><a href="#">Settings</a></li>
+      <li><a href="index.html">Proxy</a></li>
+      <li><a href="/inprogress.html">Settings</a></li>
     </ul>
   </nav>
   <center>
@@ -478,24 +478,26 @@ searchInput.addEventListener('input', function() {
 </script>
 
 <script>
-    function highlightGame(game) {
-      // Get all game elements
-      const games = document.getElementsByClassName('game');
-  
-      // Remove 'highlighted' class from all games
-      for (let i = 0; i < games.length; i++) {
-        games[i].classList.remove('highlighted');
-      }
-  
-      // Add 'highlighted' class to the hovered game
-      game.classList.add('highlighted');
-  
-      // Add 'fade' class to other games
-      for (let i = 0; i < games.length; i++) {
-        if (games[i] !== game) {
-          games[i].classList.add('fade');
-        }
-      }
+function highlightGame(game) {
+  // Get all game elements
+  const games = document.getElementsByClassName('game');
+
+  // Remove 'highlighted' class from all games and remove 'fade' class from all games
+  for (let i = 0; i < games.length; i++) {
+    games[i].classList.remove('highlighted');
+    games[i].classList.remove('fade');
+  }
+
+  // Add 'highlighted' class to the hovered game
+  game.classList.add('highlighted');
+
+  // Add 'fade' class to other games
+  for (let i = 0; i < games.length; i++) {
+    if (games[i] !== game) {
+      games[i].classList.add('fade');
     }
+  }
+}
+
   </script>
   
