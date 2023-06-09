@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="gframe.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/logo.png">
 </head>
 <body>
   <nav>
@@ -17,10 +18,9 @@
     </div>
     <ul class="menu">
       <li><a href="/index.html">Home</a></li>
-      <li><a href="/inprogress.html">About</a></li>
-      <li><a href="#">Games</a></li>
-      <li><a href="index.html">Proxy</a></li>
-      <li><a href="/inprogress.html">Settings</a></li>
+      <li><a href="/static/games.html">Games</a></li>
+      <li><a href="/static/">Proxy</a></li>
+      <li><a href="/settings/">Settings</a></li>
     </ul>
   </nav>
   <iframe id="iframe" src=""></iframe>
@@ -38,3 +38,7 @@ const iframe = document.getElementById('iframe');
 iframe.src = storedURL;
 
 </script>
+
+
+<script src="/settings/js/index.js"></script>
+<script src="/settings/js/settings.js"></script>

@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" href="/logo.png">
    </head>
    <body>
       <nav>
@@ -16,10 +17,9 @@
          </div>
          <ul class="menu">
            <li><a href="/index.html">Home</a></li>
-           <li><a href="/inprogress.html">About</a></li>
            <li><a href="games.html">Games</a></li>
-           <li><a href="#">Proxy</a></li>
-           <li><a href="/inprogress.html">Settings</a></li>
+           <li><a href="index.html">Proxy</a></li>
+           <li><a href="/settings/">Settings</a></li>
          </ul>
        </nav>
       <div id="header">
@@ -28,7 +28,7 @@
       <div id="content">
          <h1 onclick="launchURL('netflix.com')">Search the Web and use the FIRST static proxy</h1>
          <form id="uv-form"">
-            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+            <input id="uv-search-engine" value="" type="hidden"/> 
             <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
           </form>
           <div class="desc left-margin">
@@ -46,3 +46,20 @@
       <script src="index.js" defer></script>
    </body>
 </html>
+
+
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+  // Get the search engine value from local storage
+  var searchEngine = localStorage.getItem("searchengine");
+
+  // Set the value of the input field
+  var searchInput = document.getElementById("uv-search-engine");
+  searchInput.value = searchEngine || "https://www.google.com/search?q=";
+});
+
+</script>
+
+
+<script src="/settings/js/index.js"></script>
+<script src="/settings/js/settings.js"></script>
